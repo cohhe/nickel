@@ -1,0 +1,1008 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nickel v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-01-28 08:17:26+0000\n"
+"Last-Translator: smaids <smaids2007@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:17
+#@ nickel
+msgid "404"
+msgstr ""
+
+#: 404.php:21
+#@ nickel
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: comments.php:29
+#: comments.php:47
+#@ nickel
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:30
+#: comments.php:48
+#@ nickel
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:31
+#: comments.php:49
+#@ nickel
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:54
+#@ nickel
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:23
+#: content-quote.php:104
+#: content.php:69
+#@ nickel
+msgid "Pages:"
+msgstr ""
+
+#: content-none.php:13
+#@ nickel
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+#, php-format
+#@ nickel
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+#@ nickel
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:28
+#@ nickel
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: functions.php:637
+#, php-format
+#@ nickel
+msgid "Page %s"
+msgstr ""
+
+#: inc/back-compat.php:41
+#: inc/back-compat.php:53
+#: inc/back-compat.php:68
+#, php-format
+#@ nickel
+msgid "Nickel 1.0 requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr ""
+
+#: inc/customizer.php:19
+#: inc/customizer.php:20
+#@ nickel
+msgid "Background may only be visible on wide screens."
+msgstr ""
+
+#: inc/customizer.php:28
+#@ nickel
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/customizer.php:31
+#@ nickel
+msgid "Display Site Title &amp; Tagline"
+msgstr ""
+
+#: inc/customizer.php:398
+#@ nickel
+msgid "Nickel 1.0"
+msgstr ""
+
+#: inc/customizer.php:401
+#, php-format
+#@ nickel
+msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by the <a href=\"%1$s\">featured</a> tag; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
+msgstr ""
+
+#: inc/customizer.php:402
+#, php-format
+#@ nickel
+msgid "Enhance your site design by using <a href=\"%s\">Featured Images</a> for posts you&rsquo;d like to stand out (also known as post thumbnails). This allows you to associate an image with your post without inserting it. Nickel 1.0 uses featured images for posts and pages&mdash;above the title&mdash;and in the Featured Content area on the home page."
+msgstr ""
+
+#: inc/customizer.php:403
+#, php-format
+#@ nickel
+msgid "For an in-depth tutorial, and more tips and tricks, visit the <a href=\"%s\">Nickel 1.0 documentation</a>."
+msgstr ""
+
+#: inc/metaboxes/layouts.php:8
+#@ nickel
+msgid "Layouts"
+msgstr ""
+
+#: inc/metaboxes/layouts.php:15
+#@ nickel
+msgid "Layout type"
+msgstr ""
+
+#: inc/template-tags.php:87
+#, php-format
+#@ nickel
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2664
+#@ nickel
+msgid "Activate"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2510
+#@ nickel
+msgid "Type"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:303
+#: functions.php:874
+#@ nickel
+msgid "Install Required Plugins"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:304
+#: functions.php:875
+#@ nickel
+msgid "Install Plugins"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:305
+#: functions.php:876
+#, php-format
+#@ nickel
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:306
+#: functions.php:877
+#@ nickel
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:308
+#: functions.php:878
+#, php-format
+#@ nickel
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:313
+#: functions.php:879
+#, php-format
+#@ nickel
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:318
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to install the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:323
+#: functions.php:884
+#, php-format
+#@ nickel
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:328
+#, php-format
+#@ nickel
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:333
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:338
+#: functions.php:881
+#, php-format
+#@ nickel
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:343
+#: functions.php:882
+#, php-format
+#@ nickel
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:348
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to activate the %1$s plugin."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %1$s plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:353
+#: functions.php:886
+#@ nickel
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:358
+#@ nickel
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:363
+#@ nickel
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:368
+#: functions.php:888
+#@ nickel
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:369
+#@ nickel
+msgid "Return to the dashboard"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:370
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3047
+#: functions.php:889
+#@ nickel
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:372
+#, php-format
+#@ nickel
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:373
+#, php-format
+#@ nickel
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:374
+#, php-format
+#@ nickel
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:375
+#@ nickel
+msgid "Dismiss this notice"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:376
+#@ nickel
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:494
+#@ nickel
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:495
+#@ nickel
+msgid "Update Required"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:612
+#@ nickel
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:806
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3465
+#@ nickel
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:921
+#@ nickel
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:921
+#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#@ nickel
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:925
+#@ nickel
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1110
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2864
+#@ nickel
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:1932
+#, php-format
+#@ nickel
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2213
+#@ nickel
+msgid "Required"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2216
+#@ nickel
+msgid "Recommended"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2233
+#@ nickel
+msgid "WordPress Repository"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2237
+#@ nickel
+msgid "External Source"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2241
+#@ nickel
+msgid "Pre-Packaged"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2260
+#@ nickel
+msgid "Not Installed"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2264
+#@ nickel
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2266
+#@ nickel
+msgid "Active"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2272
+#@ nickel
+msgid "Required Update not Available"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2275
+#@ nickel
+msgid "Requires Update"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2278
+#@ nickel
+msgid "Update recommended"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2286
+#, php-format
+#@ nickel
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2335
+#, php-format
+#@ nickel
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2339
+#, php-format
+#@ nickel
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2343
+#, php-format
+#@ nickel
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2347
+#, php-format
+#@ nickel
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2440
+#@ nickel
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2448
+#@ nickel
+msgid "Installed version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2456
+#@ nickel
+msgid "Minimum required version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2468
+#@ nickel
+msgid "Available version:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2492
+#, php-format
+#@ nickel
+msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2508
+#@ nickel
+msgid "Plugin"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2509
+#@ nickel
+msgid "Source"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2514
+#@ nickel
+msgid "Version"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2515
+#@ nickel
+msgid "Status"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2539
+#, php-format
+#@ nickel
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2545
+#, php-format
+#@ nickel
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2551
+#, php-format
+#@ nickel
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2622
+#@ nickel
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2655
+#@ nickel
+msgid "Install"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2661
+#@ nickel
+msgid "Update"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2725
+#@ nickel
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2727
+#@ nickel
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2850
+#@ nickel
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: functions/tgm-activation/class-tgm-plugin-activation.php:2868
+#: functions/tgm-activation/class-tgm-plugin-activation.php:371
+#@ nickel
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3046
+#@ nickel
+msgid "Plugin activation failed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3385
+#, php-format
+#@ nickel
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3389
+#, php-format
+#@ nickel
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3390
+#, php-format
+#@ nickel
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3394
+#@ nickel
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#, php-format
+#@ nickel
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#@ nickel
+msgid "Show Details"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3395
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#@ nickel
+msgid "Hide Details"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3396
+#@ nickel
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3397
+#, php-format
+#@ nickel
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3401
+#@ nickel
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3402
+#, php-format
+#@ nickel
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3403
+#@ nickel
+msgid "All installations have been completed."
+msgstr ""
+
+#: functions/tgm-activation/class-tgm-plugin-activation.php:3404
+#, php-format
+#@ nickel
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: functions.php:880
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:883
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:885
+#, php-format
+#@ nickel
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:887
+#@ nickel
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:890
+#, php-format
+#@ nickel
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: inc/customizer.php:39
+#@ nickel
+msgid "General settings"
+msgstr ""
+
+#: inc/customizer.php:40
+#@ nickel
+msgid "You can configure your general theme settings here"
+msgstr ""
+
+#: inc/customizer.php:338
+#@ nickel
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: inc/customizer.php:339
+#@ nickel
+msgid "Join us on Facebook"
+msgstr ""
+
+#: inc/customizer.php:340
+#@ nickel
+msgid "Join us on Google+"
+msgstr ""
+
+#: inc/customizer.php:341
+#@ nickel
+msgid "Cohhe.com"
+msgstr ""
+
+#: inc/template-tags.php:89
+#, php-format
+#@ nickel
+msgid "<span class=\"glyphicon glyphicon-chevron-left\"></span><span class=\"post-left\">%title</span>"
+msgstr ""
+
+#: inc/template-tags.php:90
+#, php-format
+#@ nickel
+msgid "<span class=\"glyphicon glyphicon-chevron-right\"></span><span class=\"post-right\">%title</span>"
+msgstr ""
+
+#: comments.php:63
+#@ nickel
+msgid "Leave a reply"
+msgstr ""
+
+#: comments.php:64
+#@ nickel
+msgid "Your email adress will not be published. Required fields are marked*"
+msgstr ""
+
+#: comments.php:65
+#@ nickel
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:66
+#@ nickel
+msgid "Comment*"
+msgstr ""
+
+#: comments.php:70
+#@ nickel
+msgid "Name*"
+msgstr ""
+
+#: comments.php:72
+#@ nickel
+msgid "E-mail*"
+msgstr ""
+
+#: comments.php:74
+#@ nickel
+msgid "Website"
+msgstr ""
+
+#: header.php:86
+#@ nickel
+msgid "Site logo"
+msgstr ""
+
+#: header.php:72
+#@ nickel
+msgid "Search"
+msgstr ""
+
+#: archive.php:25
+#@ nickel
+msgid "Archive"
+msgstr ""
+
+#: author.php:19
+#@ nickel
+msgid "Author"
+msgstr ""
+
+#: category.php:16
+#@ nickel
+msgid "Category"
+msgstr ""
+
+#: content-quote.php:62
+#: content.php:65
+#@ nickel
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content-quote.php:89
+#: content.php:100
+#@ nickel
+msgid "About post author"
+msgstr ""
+
+#: functions.php:105
+#@ nickel
+msgid "Primary menu"
+msgstr ""
+
+#: functions.php:241
+#@ nickel
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:251
+#@ nickel
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:261
+#@ nickel
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:271
+#@ nickel
+msgid "Footer Area Four"
+msgstr ""
+
+#: functions.php:281
+#@ nickel
+msgid "Post sidebar"
+msgstr ""
+
+#: inc/customizer.php:33
+#@ nickel
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:47
+#@ nickel
+msgid "Header settings"
+msgstr ""
+
+#: inc/customizer.php:48
+#@ nickel
+msgid "You can configure your header theme settings here"
+msgstr ""
+
+#: inc/customizer.php:55
+#@ nickel
+msgid "Footer settings"
+msgstr ""
+
+#: inc/customizer.php:56
+#@ nickel
+msgid "You can configure your footer theme settings here"
+msgstr ""
+
+#: inc/customizer.php:63
+#@ nickel
+msgid "Call us"
+msgstr ""
+
+#: inc/customizer.php:64
+#@ nickel
+msgid "Call us text at the header."
+msgstr ""
+
+#: inc/customizer.php:105
+#@ nickel
+msgid "Consult"
+msgstr ""
+
+#: inc/customizer.php:106
+#@ nickel
+msgid "Consult text at the header."
+msgstr ""
+
+#: inc/customizer.php:136
+#@ nickel
+msgid "Facebook link"
+msgstr ""
+
+#: inc/customizer.php:137
+#@ nickel
+msgid "Facebook social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:156
+#@ nickel
+msgid "Twitter link"
+msgstr ""
+
+#: inc/customizer.php:157
+#@ nickel
+msgid "Twitter social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:176
+#@ nickel
+msgid "RSS link"
+msgstr ""
+
+#: inc/customizer.php:177
+#@ nickel
+msgid "RSS social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:196
+#@ nickel
+msgid "Dribbble link"
+msgstr ""
+
+#: inc/customizer.php:197
+#@ nickel
+msgid "Dribbble social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:216
+#@ nickel
+msgid "Linkedin link"
+msgstr ""
+
+#: inc/customizer.php:217
+#@ nickel
+msgid "Linkedin social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:236
+#@ nickel
+msgid "Behance link"
+msgstr ""
+
+#: inc/customizer.php:237
+#@ nickel
+msgid "Behance social icon at footer."
+msgstr ""
+
+#: inc/customizer.php:256
+#@ nickel
+msgid "Pinterest link"
+msgstr ""
+
+#: inc/customizer.php:257
+#@ nickel
+msgid "Pinterest social icon at footer."
+msgstr ""
+
+#: search.php:15
+#@ nickel
+msgid "Search results"
+msgstr ""
+
+#: comments.php:25
+#@ nickel
+msgid "Comments"
+msgstr ""
+
+#: content-quote.php:41
+#@ nickel
+msgid "Say"
+msgstr ""
+
+#: content-quote.php:70
+#: content.php:81
+#: functions.php:554
+#: functions.php:569
+#@ nickel
+msgid "ago"
+msgstr ""
+
+#: content.php:60
+#@ nickel
+msgid "Read more"
+msgstr ""
+
+#: functions.php:106
+#@ nickel
+msgid "Bottom menu"
+msgstr ""
+
+#: functions.php:291
+#@ nickel
+msgid "Page sidebar"
+msgstr ""
+
+#: functions.php:548
+#@ nickel
+msgid "Previous story"
+msgstr ""
+
+#: functions.php:563
+#@ nickel
+msgid "Next story"
+msgstr ""
+
