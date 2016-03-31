@@ -24,10 +24,6 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-	
 	<?php wp_head(); ?>
 </head>
 <?php
@@ -62,7 +58,7 @@ switch ($layout_type) {
 }
 
 if ( ( MAGAZINE_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || ( MAGAZINE_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-6' ) ) ) {
-	$nickel_site_width = 'col-sm-8 col-md-8 col-lg-8';
+	$nickel_site_width = 'col-sm-9 col-md-9 col-lg-9';
 }
 
 $logo = get_custom_header();

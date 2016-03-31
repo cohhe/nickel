@@ -88,20 +88,7 @@ if ( !empty( $categories ) ) {
 			<span class="entry-content-date icon-calendar"><?php echo get_the_date( get_option( 'date_format' ), get_the_ID() ); ?></span>
 			<span class="entry-content-time icon-clock"><?php echo human_time_diff(get_the_time('U',get_the_ID()),current_time('timestamp')) .  ' '.__('ago', 'nickel'); ?></span>
 		</div>
-		<div class="entry-content-share">
-			<?php
-				$post_title = urlencode(get_the_title());
-				$post_url = get_the_permalink();
-			?>
-			<a href="http://www.facebook.com/sharer.php?u=<?php echo $post_url; ?>&title=<?php echo $post_title; ?>" class="share-facebook icon-facebook" target="_blank"></a>
-			<a href="https://twitter.com/share?url=<?php echo $post_url; ?>&text=<?php echo $post_title; ?>" class="share-twitter icon-twitter" target="_blank"></a>
-			<a href="https://plus.google.com/share?url=<?php echo $post_url; ?>" class="share-gplus icon-gplus" target="_blank"></a>
-			<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo $post_url; ?>" class="share-linkedin icon-linkedin-squared" target="_blank"></a>
-			<a href="http://www.tumblr.com/share/link?url=<?php echo $post_url; ?>&title=<?php echo $post_title; ?>" class="share-tumblr icon-tumblr" target="_blank"></a>
-			<a href="http://www.stumbleupon.com/submit?url=<?php echo $post_url; ?>&title=<?php echo $post_title; ?>" class="share-stumbleupon icon-stumbleupon" target="_blank"></a>
-			<a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());" class="share-pinterest icon-pinterest"></a>
-			<div class="clearfix"></div>
-		</div>
+		<?php if ( function_exists('nickel_get_content_share') ) { echo nickel_get_content_share(); } ?>
 		<?php nickel_prev_next_links(); ?>
 		<?php if ( get_the_author_meta( 'description' ) ) { ?>
 			<div id="author-info">

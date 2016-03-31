@@ -27,7 +27,7 @@ global $nickel_site_width, $nickel_layout_type;
 			get_sidebar( 'page' );
 		}
 	?>
-	<div class="content-wrapper <?php echo $nickel_site_width; ?>">
+	<div class="content-wrapper <?php echo esc_attr($nickel_site_width); ?>">
 
 			<?php
 				// Start the Loop.

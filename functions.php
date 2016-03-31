@@ -124,10 +124,10 @@ endif; // nickel_setup
 add_action( 'after_setup_theme', 'nickel_setup' );
 
 // Admin CSS
-function vh_admin_css() {
-	wp_enqueue_style( 'vh-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+function nickel_admin_css() {
+	wp_enqueue_style( 'nickel-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
 }
-add_action('admin_head','vh_admin_css');
+add_action('admin_head','nickel_admin_css');
 
 function nickel_getTextBetweenTags($string, $tagname) {
     $pattern = "/<$tagname>([\w\W]*?)<\/$tagname>/";
@@ -378,19 +378,6 @@ function nickel_content_width() {
 add_action( 'template_redirect', 'nickel_content_width' );
 
 /**
- * Prevent page scroll when clicking the More link
- *
- * @since Nickel 1.0
- *
- * @return void
- */
-function remove_more_link_scroll( $link ) {
-	$link = preg_replace( '|#more-[0-9]+|', '', $link );
-	return $link;
-}
-add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
-
-/**
  * Register Lato Google font for Nickel 1.0.
  *
  * @since Nickel 1.0
@@ -459,6 +446,10 @@ function nickel_scripts() {
 	wp_enqueue_script( 'jquery.jcarousel', get_template_directory_uri() . '/js/jquery.jcarousel.pack.js', array( 'jquery' ), '', true );
 
 	wp_enqueue_script( 'jquery.isotope', get_template_directory_uri() . '/js/jquery.isotope.min.js', array( 'jquery' ), '', true );
+
+	// Add html5
+	wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/js/html5.js' );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'nickel_scripts' );
 
@@ -850,6 +841,24 @@ function vh_register_required_plugins() {
 			'slug'     				=> 'bootstrap-3-shortcodes', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+		array(
+			'name'     				=> 'Contact Form 7', // The plugin name
+			'slug'     				=> 'contact-form-7', // The plugin slug (typically the folder name)
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '4.4.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+		array(
+			'name'     				=> 'Functionality for Nickel theme', // The plugin name
+			'slug'     				=> 'functionality-for-nickel-theme', // The plugin slug (typically the folder name)
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL

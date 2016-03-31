@@ -1,4 +1,8 @@
 Nickel changelog
 
+= Version 1.1 =
+* Updated TGM plugins
+* Fixed some minor issues
+
 = Version 1.0 =
 * Initial release

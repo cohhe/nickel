@@ -29,22 +29,7 @@
 		<div class="bottom-footer">
 			<div class="bottom-footer-inner">
 				<div class="copyright">Theme by <a href="https://cohhe.com/">Cohhe</a></div>
-				<div class="social-icons">
-					<?php
-						$facebook = get_theme_mod('nickel_header_facebook_icon', '');
-						$twitter = get_theme_mod('nickel_header_twitter_icon', '');
-						$gplus = get_theme_mod('nickel_header_gplus_icon', '');
-					?>
-					<?php if ( $facebook ) { ?>
-						<a href="<?php echo $facebook; ?>" class="footer-social icon-facebook"></a>
-					<?php } ?>
-					<?php if ( $twitter ) { ?>
-						<a href="<?php echo $twitter; ?>" class="footer-social icon-twitter"></a>
-					<?php } ?>
-					<?php if ( $gplus ) { ?>
-						<a href="<?php echo $gplus; ?>" class="footer-social icon-gplus"></a>
-					<?php } ?>
-				</div>
+				<?php if ( function_exists('nickel_get_footer_social') ) { echo nickel_get_footer_social(); } ?>
 				<nav id="bottom-navigation" class="bottom-navigation" role="navigation">
 					<?php
 						wp_nav_menu(
