@@ -414,7 +414,9 @@ add_filter('excerpt_more', 'nickel_excerpt_more');
  */
 function nickel_scripts() {
 
-	wp_enqueue_script('googlemap', '//maps.googleapis.com/maps/api/js?sensor=false', array(), '3', false);
+	if ( get_theme_mod('nickel_gmap_key', '') ) {
+		wp_enqueue_script('googlemap', '//maps.googleapis.com/maps/api/js?sensor=false&key='.get_theme_mod('nickel_gmap_key', ''), array(), '3', false);
+	}
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 

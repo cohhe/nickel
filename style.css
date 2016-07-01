@@ -4,10 +4,10 @@ Theme URI: http://cohhe.com/project-view/nickel/
 Author: Cohhe
 Author URI: https://cohhe.com/
 Description: Enhance your story experience, by leveraging the power of Nickel Wordpress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
-Version: 1.1
+Version: 1.0.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: nickel 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -827,7 +827,8 @@ hr {
 
 #primary-navigation {
 	width: 69.9%;
-	display: inline-block;
+	display: block;
+	float: left;
 }
 
 /*body.search-active .header-search-container {
@@ -867,7 +868,7 @@ body.search-active #primary-navigation {
 	display: inline-block;
     width: 29.8%;
     position: relative;
-    top: 9px;
+    top: 27px;
 }
 
 .frontpage-slider-wrapper .slider-row {
@@ -3490,15 +3491,19 @@ article .entry-content table tr:nth-child(even) {
 /* Responsiveness */
 
 @media (max-width: 1200px) {
-
+	body.single .site-main.container {
+		padding: 0 15px !important;
+	}
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
 
 }
 
-@media (max-width: 991px) {
-
+@media (max-width: 992px) {
+	.category-more {
+		margin-bottom: 30px;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -3524,11 +3529,15 @@ article .entry-content table tr:nth-child(even) {
 		width: 50%;
 		padding-bottom: 15px;
 	}
+
+	#primary-navigation li a:not(.category-img-link):not(.menu-post-title) {
+		font-size: 12px;
+	}
 }
 
 @media (max-width: 768px) {
 	#primary-navigation,
-	.bottom-header .header-search {
+	.bottom-header .header-search-container {
 		display: none;
 	}
 
@@ -3539,7 +3548,7 @@ article .entry-content table tr:nth-child(even) {
 
 	.bottom-header {
 		margin-top: 0;
-		float: left;
+		float: right;
 	}
 
 	.bottom-header .social-icons,
@@ -3601,16 +3610,32 @@ article .entry-content table tr:nth-child(even) {
 		margin-bottom: 0;
 		border-bottom: none;
 	}
+
+	.nav_button.left,
+	.nav_button.right {
+		width: 100%;
+	}
+
+	.nav_button.right {
+		margin-top: 30px;
+	}
+
 }
 
 @media (max-width: 570px) {
 	.news-item-container {
-		width: 100%;
+		width: 100% !important;
+	}
+
+	.category-container.small {
+		width: 100% !important;
 	}
 }
 
 @media (max-width: 480px) {
-
+	.nickel-instagram img {
+		width: 100% !important;
+	}
 }
 
 /* Fontello fonts */
