@@ -1,5 +1,9 @@
 Nickel changelog
 
+= Version 1.2 =
+* Fixed some security issues
+* Updated TGM version
+
 = Version 1.1 =
 * Updated TGM plugins
 * Fixed some minor issues

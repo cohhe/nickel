@@ -21,7 +21,7 @@
 					$footer_columns = 4;
 				}
 			?>
-			<div class="footer-links-container columns_count_<?php echo $footer_columns; ?>">
+			<div class="footer-links-container columns_count_<?php echo esc_attr($footer_columns); ?>">
 				<?php get_sidebar( 'footer' ); ?>
 				<div class="clearfix"></div>
 			</div>

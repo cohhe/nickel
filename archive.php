@@ -22,7 +22,7 @@ get_header();
 global $nickel_site_width;
 ?>
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Archive', 'nickel'); echo ': ' . single_month_title(' ', false); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Archive', 'nickel'); echo ': ' . single_month_title(' ', false); ?></h1>
 	<div class="content-wrapper">
 
 			<?php if ( have_posts() ) :

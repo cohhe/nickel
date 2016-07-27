@@ -16,7 +16,7 @@ if ( !is_single() ) {
 	$post_class = 'not-single-post';
 	$header_class = 'simple';
 	if ( !empty($img) ) {
-		$background = ' style="background: url(' . $img['0'] . ') no-repeat;"';
+		$background = ' style="background: url(' . esc_url($img['0']) . ') no-repeat;"';
 	} else {
 		$background = ' data-noimage="true"';
 	}
@@ -40,7 +40,7 @@ if ( !empty( $categories ) ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($nickel_article_width.$post_class); echo $background; ?>>
-	<header class="entry-header <?php echo $header_class; ?>">
+	<header class="entry-header <?php echo esc_attr($header_class); ?>">
 		<?php
 			if ( !is_single() && ( is_home() || is_archive() || is_search() ) ) {
 				echo '<div class="post-date">' . get_the_date( get_option( 'date_format' ), get_the_ID() ) . '</div>';
@@ -52,7 +52,7 @@ if ( !empty( $categories ) ) {
 				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'nickel-full-width' );
 				if ( !empty($img) ) {
 					echo '<div class="single-post-image-container">';
-						echo '<img src="'.$img['0'].'" class="single-post-image" alt="Post with image">';
+						echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="Post with image">';
 						echo '<span class="single-post-category">' . implode($cat_list, ', ') . '</span>';
 				echo '</div>';
 				}
@@ -65,16 +65,16 @@ if ( !empty( $categories ) ) {
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-	<?php echo '<a href="' . get_the_permalink() . '" class="single-read-more">' . __('Read more', 'nickel') . '</a>'; ?>
+	<?php echo '<a href="' . get_the_permalink() . '" class="single-read-more">' . esc_html__('Read more', 'nickel') . '</a>'; ?>
 	<?php echo '<span class="post-comments icon-comment-1"><a href="' . get_the_permalink() . '#comments">' . $comment_count . '</a></span>'; ?>
 	<?php else : ?>
 	<div class="entry-content">
 		<div id="entry-content-wrapper">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'nickel' ) ); ?>
+			<?php the_content( esc_html__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'nickel' ) ); ?>
 		</div>
 		<?php
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'nickel' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'nickel' ) . '</span>',
 				'after'       => '<div class="clearfix"></div></div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',
@@ -86,13 +86,13 @@ if ( !empty( $categories ) ) {
 				nickel_post_tag_list( get_the_ID() );
 			?>
 			<span class="entry-content-date icon-calendar"><?php echo get_the_date( get_option( 'date_format' ), get_the_ID() ); ?></span>
-			<span class="entry-content-time icon-clock"><?php echo human_time_diff(get_the_time('U',get_the_ID()),current_time('timestamp')) .  ' '.__('ago', 'nickel'); ?></span>
+			<span class="entry-content-time icon-clock"><?php echo human_time_diff(get_the_time('U',get_the_ID()),current_time('timestamp')) .  ' '.esc_html__('ago', 'nickel'); ?></span>
 		</div>
 		<?php if ( function_exists('nickel_get_content_share') ) { echo nickel_get_content_share(); } ?>
 		<?php nickel_prev_next_links(); ?>
 		<?php if ( get_the_author_meta( 'description' ) ) { ?>
 			<div id="author-info">
-				<h4 class="author-title"><?php _e('About post author', 'nickel'); ?></h4>
+				<h4 class="author-title"><?php esc_html_e('About post author', 'nickel'); ?></h4>
 				<div class="author-infobox">
 					<div id="author-avatar">
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'vh_author_bio_avatar_size', 120 ) ); ?>

@@ -235,7 +235,7 @@ function nickel_comment_count( $post_id ) {
  *
  * @return void
  */
-function vh_widgets_init() {
+function nickel_widgets_init() {
 
 	register_sidebar(array(
 		'name' => __('Footer Area One', 'nickel'),
@@ -298,7 +298,7 @@ function vh_widgets_init() {
 	));
 
 }
-add_action('widgets_init', 'vh_widgets_init');
+add_action('widgets_init', 'nickel_widgets_init');
 
 /**
  * Custom template tags for nickel 1.0
@@ -602,41 +602,6 @@ function nickel_body_classes( $classes ) {
 add_filter( 'body_class', 'nickel_body_classes' );
 
 /**
- * Create a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @since Nickel 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function nickel_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'nickel' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'nickel_wp_title', 10, 2 );
-
-/**
  * Create HTML list of nav menu items.
  * Replacement for the native Walker, using the description.
  *
@@ -809,16 +774,6 @@ require get_template_directory() . '/inc/template-tags.php';
 // Add Theme Customizer functionality.
 require get_template_directory() . '/inc/customizer.php';
 
-function get_depth($postid) {
-	$depth = ($postid==get_option('page_on_front')) ? -1 : 0;
-	while ($postid > 0) {
-	$postid = get_post_ancestors($postid);
-	$postid = $postid[0];
-	$depth++;
-	}
-	return $depth;
-}
-
 /**
  * Register the required plugins for this theme.
  *
@@ -831,7 +786,7 @@ function get_depth($postid) {
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function vh_register_required_plugins() {
+function nickel_register_required_plugins() {
 
 	/**
 	 * Array of plugin arrays. Required keys are name and slug.
@@ -877,8 +832,7 @@ function vh_register_required_plugins() {
 	$config = array(
 		'domain'       		=> 'nickel',         	// Text domain - likely want to be the same as your theme.
 		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
-		'parent_menu_slug' 	=> 'themes.php', 				// Default parent menu slug
-		'parent_url_slug' 	=> 'themes.php', 				// Default parent URL slug
+		'parent_slug' 	=> 'themes.php', 				// Default parent menu slug
 		'menu'         		=> 'install-required-plugins', 	// Menu slug
 		'has_notices'      	=> true,                       	// Show admin notices or not
 		'is_automatic'    	=> true,					   	// Automatically activate plugins after installation or not
@@ -907,7 +861,7 @@ function vh_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'vh_register_required_plugins' );
+add_action( 'tgmpa_register', 'nickel_register_required_plugins' );
 
 function nickel_allowed_tags() {
 	global $allowedposttags;

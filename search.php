@@ -12,7 +12,7 @@ get_header();
 global $nickel_site_width;
 ?>
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Search results', 'nickel'); echo ': ' . get_search_query(); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Search results', 'nickel'); echo ': ' . get_search_query(); ?></h1>
 	<div class="content-wrapper">
 		<?php if ( have_posts() ) :
 				// Start the Loop.
