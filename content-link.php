@@ -16,7 +16,7 @@ if ( !is_single() ) {
 	$post_class = 'not-single-post';
 	$header_class = 'simple';
 	if ( !empty($img) ) {
-		$background = ' style="background: url(' . $img['0'] . ') no-repeat;"';
+		$background = ' style="background: url(' . esc_url( $img['0'] ) . ') no-repeat;"';
 	} else {
 		$background = ' data-noimage="true"';
 	}
@@ -31,14 +31,14 @@ $comment_count = $comments->approved;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($nickel_article_width.$post_class); echo $background; ?>>
-	<header class="entry-header <?php echo $header_class; ?>">
+	<header class="entry-header <?php echo esc_attr( $header_class ); ?>">
 		<?php
 			if ( !is_single() && ( is_home() || is_archive() || is_search() ) ) {
 				$whole_blockquote = nickel_getTextBetweenTags(get_the_content(), 'blockquote');
 				$blockquote_cite = nickel_getTextBetweenTags($whole_blockquote, 'cite');
 				echo '<div class="quote-date">' . get_the_date( get_option( 'date_format' ), get_the_ID() ) . '</div>';
 				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-				echo '<div class="post-cite-say">' . __('Say', 'nickel') . '</div>';
+				echo '<div class="post-cite-say">' . esc_html__('Say', 'nickel') . '</div>';
 				echo '<div class="post-cite">' . $blockquote_cite . '</div>';
 				echo '<div class="clearfix"></div>';
 				echo '</header><!-- .entry-header -->
@@ -48,9 +48,9 @@ $comment_count = $comments->approved;
 				$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'nickel-full-width' );
 				echo '<div class="single-post-image-container">';
 				if ( !empty($img) ) {
-					echo '<img src="'.$img['0'].'" class="single-post-image" alt="Post with image">';
+					echo '<img src="'.esc_url($img['0']).'" class="single-post-image" alt="Post with image">';
 				}
-				echo '<span class="single-post-category">Category</span>';
+				echo '<span class="single-post-category">'.esc_html__('Category', 'nickel').'</span>';
 				echo '</div>';
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			}
@@ -59,7 +59,7 @@ $comment_count = $comments->approved;
 	<?php else : ?>
 	<div class="entry-content">
 		<div id="entry-content-wrapper">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'nickel' ) ); ?>
+			<?php the_content( esc_html__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'nickel' ) ); ?>
 		</div>
 		<div class="entry-content-meta">
 			<?php
@@ -67,13 +67,13 @@ $comment_count = $comments->approved;
 				nickel_post_tag_list( get_the_ID() );
 			?>
 			<span class="entry-content-date icon-calendar"><?php echo get_the_date( get_option( 'date_format' ), get_the_ID() ); ?></span>
-			<span class="entry-content-time icon-clock"><?php echo human_time_diff(get_the_time('U',$prev_post->ID),current_time('timestamp')) .  ' '.__('ago', 'nickel'); ?></span>
+			<span class="entry-content-time icon-clock"><?php echo human_time_diff(get_the_time('U',$prev_post->ID),current_time('timestamp')) .  ' '.esc_html__('ago', 'nickel'); ?></span>
 		</div>
 		<?php if ( function_exists('nickel_get_content_share') ) { echo nickel_get_content_share(); } ?>
 		<?php nickel_prev_next_links(); ?>
 		<?php if ( get_the_author_meta( 'description' ) ) { ?>
 			<div id="author-info">
-				<h4 class="author-title"><?php _e('About post author', 'nickel'); ?></h4>
+				<h4 class="author-title"><?php esc_html_e('About post author', 'nickel'); ?></h4>
 				<div class="author-infobox">
 					<div id="author-avatar">
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'vh_author_bio_avatar_size', 120 ) ); ?>
@@ -88,7 +88,7 @@ $comment_count = $comments->approved;
 		<?php } ?>
 		<?php
 			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'nickel' ) . '</span>',
+				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'nickel' ) . '</span>',
 				'after'       => '<div class="clearfix"></div></div>',
 				'link_before' => '<span>',
 				'link_after'  => '</span>',

@@ -21,7 +21,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
@@ -65,7 +64,7 @@ $logo = get_custom_header();
 $logo = $logo->url;
 
 if (get_search_query() == '') {
-	$search_string = __('Search', 'nickel');
+	$search_string = esc_html__('Search', 'nickel');
 } else {
 	$search_string = get_search_query();
 }
@@ -79,7 +78,7 @@ if (get_search_query() == '') {
 			<div class="logo-wrapper">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
 					<?php if ( $logo ) { ?>
-						<img src="<?php echo $logo; ?>" alt="<?php _e('Site logo', 'nickel'); ?>">
+						<img src="<?php echo esc_url($logo); ?>" alt="<?php esc_html_e('Site logo', 'nickel'); ?>">
 					<?php } else { ?>
 						<span class="blog-name"><?php bloginfo( 'name' ); ?></span>
 						<span class="blog-description"><?php bloginfo( 'description' ); ?></span>

@@ -16,7 +16,7 @@ global $nickel_site_width;
 ?>
 
 <div id="main-content" class="main-content">
-	<h1 class="main-page-title"><?php _e('Author', 'nickel'); echo ': ' . get_the_author(); ?></h1>
+	<h1 class="main-page-title"><?php esc_html_e('Author', 'nickel'); echo ': ' . get_the_author(); ?></h1>
 	<div class="content-wrapper">
 
 			<?php if ( have_posts() ) :
