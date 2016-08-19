@@ -4,10 +4,10 @@ Theme URI: http://cohhe.com/project-view/nickel/
 Author: Cohhe
 Author URI: https://cohhe.com/
 Description: Enhance your story experience, by leveraging the power of Nickel Wordpress Theme, built especially for telling great stories. It is the only free WordPress theme fully compatible with the Aesop Story Engine.
-Version: 1.0.0
+Version: 1.2
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: nickel 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -703,7 +703,8 @@ hr {
 
 #primary-navigation li.menu-item-has-children.depth-1 .sub-menu {
 	left: 100%;
-	top: 11px;
+	margin: 0;
+	top: -5px;
 }
 
 #primary-navigation li.menu-item-has-children.depth-1:before {
@@ -769,7 +770,7 @@ hr {
 	top: -22px;
 }
 
-#primary-navigation li.menu-item-has-children:before {
+#primary-navigation li.menu-item-has-children:not(.depth-2):before {
 	content: '';
 	width: 0;
 	height: 0;
@@ -826,7 +827,7 @@ hr {
 }
 
 #primary-navigation {
-	width: 69.9%;
+	width: 69.5%;
 	display: block;
 	float: left;
 }
@@ -1623,6 +1624,7 @@ body.search-active #primary-navigation {
 
 .single-post-image-container {
 	position: relative;
+	min-height: 70px;
 }
 
 .single-post-image-container .single-post-category {
@@ -2667,6 +2669,7 @@ body.archive .content-wrapper > article {
 	float: left;
 	display: block;
 	position: relative;
+	overflow: hidden;
 	background-position: center !important;
 	background-size: cover !important;
 	background-clip: content-box !important;
@@ -2784,6 +2787,8 @@ body.archive .content-wrapper > article .entry-summary p {
 	padding-bottom: 0;
 	margin-bottom: 16px;
 	text-align: center;
+	max-height: 260px;
+	overflow: hidden;
 
 	-webkit-transform: translate3d(0,40px,0);
 	transform: translate3d(0,40px,0);
@@ -2805,7 +2810,7 @@ article:hover .entry-header.simple .entry-title {
 	text-transform: uppercase;
 }
 
-.entry-header.simple .entry-title a:hover {
+article:not(.sticky) .entry-header.simple .entry-title a:hover {
 	color: #00abef;
 }
 

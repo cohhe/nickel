@@ -16,6 +16,7 @@ get_header();
 global $nickel_site_width;
 ?>
 <div id="main-content" class="main-content">
+	<h1 class="main-page-title"><?php _e('Tag', 'nickel'); echo ': ' . single_tag_title("",false); ?></h1>
 	<div class="content-wrapper">
 
 			<?php if ( have_posts() ) : ?>

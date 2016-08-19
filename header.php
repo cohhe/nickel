@@ -115,6 +115,7 @@ if (get_search_query() == '') {
 					<span class="header-search icon-search"></span>
 					<?php get_search_form( true ); ?>
 				</div>
+				<?php nickel_get_social_icons() ?>
 				<a href="javascript:void(0)" class="mobile-menu-button icon-menu"></a>
 			</div>
 			<div class="clearfix"></div>

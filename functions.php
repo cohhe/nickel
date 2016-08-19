@@ -111,7 +111,7 @@ if ( ! function_exists( 'nickel_setup' ) ) :
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
 		add_theme_support( 'post-formats', array(
-			'quote', 'link'
+			'quote'
 		) );
 
 		// This theme uses its own gallery styles.
@@ -132,7 +132,11 @@ add_action('admin_head','nickel_admin_css');
 function nickel_getTextBetweenTags($string, $tagname) {
     $pattern = "/<$tagname>([\w\W]*?)<\/$tagname>/";
     preg_match($pattern, $string, $matches);
-    return $matches[1];
+    if ( isset($matches[1]) ) {
+    	return $matches[1];
+    } else {
+    	return '';
+    }
 }
 
 function nickel_tag_list( $post_id, $return = false ) {

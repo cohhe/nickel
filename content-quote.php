@@ -50,7 +50,11 @@ $comment_count = $comments->approved;
 				if ( !empty($img) ) {
 					echo '<img src="'.$img['0'].'" class="single-post-image" alt="Post with image">';
 				}
-				echo '<span class="single-post-category">Category</span>';
+				$cat_names = array();
+				foreach (get_the_category() as $cat_value) {
+					$cat_names[] = $cat_value->name;
+				}
+				echo '<span class="single-post-category">'.implode(', ',$cat_names).'</span>';
 				echo '</div>';
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			}
