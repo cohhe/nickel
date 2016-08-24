@@ -1,5 +1,8 @@
 Nickel changelog
 
+= Version 1.3.1 =
+* Fixed social icon error
+
 = Version 1.3 =
 * Fixed styling and other minor issues
 
