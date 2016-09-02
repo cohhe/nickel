@@ -69,6 +69,12 @@ if (get_search_query() == '') {
 	$search_string = get_search_query();
 }
 
+$title_color_style = '';
+$title_color = get_theme_mod('header_textcolor', false);
+if ( $title_color ) {
+	$title_color_style = 'style="color: #'.$title_color.'"';
+}
+
 ?>
 <body <?php body_class(); ?>>
 <?php do_action('ase_theme_body_inside_top'); ?>
@@ -80,7 +86,7 @@ if (get_search_query() == '') {
 					<?php if ( $logo ) { ?>
 						<img src="<?php echo esc_url($logo); ?>" alt="<?php esc_html_e('Site logo', 'nickel'); ?>">
 					<?php } else { ?>
-						<span class="blog-name"><?php bloginfo( 'name' ); ?></span>
+						<span class="blog-name" <?php echo $title_color_style; ?>><?php bloginfo( 'name' ); ?></span>
 						<span class="blog-description"><?php bloginfo( 'description' ); ?></span>
 					<?php } ?>
 				</a>
@@ -91,7 +97,7 @@ if (get_search_query() == '') {
 						array(
 							'theme_location' => 'primary',
 							'menu_class'     => 'nav-menu',
-							'depth'          => 3,
+							'depth'          => 4,
 							'walker'         => new Nickel_Header_Menu_Walker
 						)
 					);
@@ -103,7 +109,7 @@ if (get_search_query() == '') {
 						array(
 							'theme_location' => 'primary',
 							'menu_class'     => 'nav-mobile-menu',
-							'depth'          => 3,
+							'depth'          => 4,
 							'walker'         => new Nickel_Header_Menu_Walker
 						)
 					);

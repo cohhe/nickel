@@ -25,6 +25,12 @@ if ( !is_single() ) {
 	$header_class = '';
 }
 
+if ( has_post_thumbnail() ) {
+	$post_class .= ' post-with-image';
+} else {
+	$post_class .= ' post-without-image';
+}
+
 $comments = wp_count_comments( get_the_ID() ); 
 $comment_count = $comments->approved;
 

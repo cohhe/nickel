@@ -111,7 +111,7 @@ if ( ! function_exists( 'nickel_setup' ) ) :
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
 		add_theme_support( 'post-formats', array(
-			'quote'
+			'quote', 'link'
 		) );
 
 		// This theme uses its own gallery styles.

@@ -1,5 +1,11 @@
 Nickel changelog
 
+= Version 1.3.2 =
+* Fixed post format meta issue
+* Made link post format clickable
+* Added another menu level
+* Fixed customizer site title color
+
 = Version 1.3.1 =
 * Fixed social icon error
 
