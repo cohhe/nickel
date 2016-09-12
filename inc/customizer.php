@@ -28,7 +28,8 @@ function nickel_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title Color', 'nickel' );
 
 	// Rename the label to "Display Site Title & Tagline" in order to make this option extra clear.
-	$wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title &amp; Tagline', 'nickel' );
+	// $wp_customize->get_control( 'display_header_text' )->label = __( 'Display Site Title &amp; Tagline', 'nickel' );
+	$wp_customize->remove_control( 'display_header_text' );
 
 	$wp_customize->get_section( 'header_image' )->title = __( 'Logo', 'nickel' );
 
@@ -48,6 +49,28 @@ function nickel_customize_register( $wp_customize ) {
 			'label'      => 'Google maps key',
 			'section'    => 'nickel_google_maps_key',
 			'type'       => 'text',
+		)
+	);
+
+	// $wp_customize->add_section( 'nickel_'.$font_key.'_fonts', array(
+	// 	'priority'       => 20,
+	// 	'capability'     => 'edit_theme_options',
+	// 	'title'          => $font_value['title'],
+	// 	'description'    => $font_value['description'],
+	// 	'panel'          => 'nickel_font_panel'
+	// ) );
+
+	$wp_customize->add_setting( 'nickel_header_presentation', array( 'default' => 'text', 'sanitize_callback' => 'sanitize_text_field' ) );
+	$wp_customize->add_control(
+		'nickel_header_presentation',
+		array(
+			'label'      => __('Header display ', 'nickel'),
+			'section'    => 'title_tagline',
+			'type'       => 'select',
+			'choices'    => array(
+				'text' => __('Only text', 'nickel'),
+				'logo' => __('Only logo', 'nickel')
+			)
 		)
 	);
 
@@ -115,6 +138,7 @@ if ( class_exists( 'WP_Customize_Section' ) && !class_exists( 'nickel_Customized
 						text-align: right;
 						margin-bottom: 60px;
 					}
+
 				</style>
 				<ul class="cohhe-social-profiles">
 					<li class="social-twitter"><i class="twitter"></i><a href="https://twitter.com/Cohhe_Themes" target="_blank"><?php _e( 'Follow us on Twitter', 'nickel' ); ?></a></li>

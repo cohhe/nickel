@@ -44,6 +44,8 @@ if ( is_archive() || is_search() || is_404() ) {
 	$layout_type = get_theme_mod('nickel_layout', 'full');
 }
 
+$header_display = get_theme_mod('nickel_header_presentation', 'text');
+
 switch ($layout_type) {
 	case 'right':
 		define('MAGAZINE_LAYOUT', 'sidebar-right');
@@ -83,7 +85,7 @@ if ( $title_color ) {
 		<div class="header-wrapper">
 			<div class="logo-wrapper">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
-					<?php if ( $logo ) { ?>
+					<?php if ( $header_display == 'logo' && $logo ) { ?>
 						<img src="<?php echo esc_url($logo); ?>" alt="<?php esc_html_e('Site logo', 'nickel'); ?>">
 					<?php } else { ?>
 						<span class="blog-name" <?php echo $title_color_style; ?>><?php bloginfo( 'name' ); ?></span>
