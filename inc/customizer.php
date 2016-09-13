@@ -33,6 +33,32 @@ function nickel_customize_register( $wp_customize ) {
 
 	$wp_customize->get_section( 'header_image' )->title = __( 'Logo', 'nickel' );
 
+	// $wp_customize->remove_section( 'header_image' );
+	// $wp_customize->add_setting( 'custom_logo', array(
+	// 	'theme_supports' => array( 'custom-logo' ),
+	// 	'transport'      => 'postMessage',
+	// ) );
+
+	// $custom_logo_args = get_theme_support( 'custom-logo' );
+	// $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'custom_logo', array(
+	// 	'label'         => __( 'Logoz' ),
+	// 	'section'       => 'title_tagline',
+	// 	// 'priority'      => 8,
+	// 	// 'height'        => $custom_logo_args[0]['height'],
+	// 	// 'width'         => $custom_logo_args[0]['width'],
+	// 	// 'flex_height'   => $custom_logo_args[0]['flex-height'],
+	// 	// 'flex_width'    => $custom_logo_args[0]['flex-width'],
+	// 	// 'button_labels' => array(
+	// 	// 	'select'       => __( 'Select logo' ),
+	// 	// 	'change'       => __( 'Change logo' ),
+	// 	// 	'remove'       => __( 'Remove' ),
+	// 	// 	'default'      => __( 'Default' ),
+	// 	// 	'placeholder'  => __( 'No logo selected' ),
+	// 	// 	'frame_title'  => __( 'Select logo' ),
+	// 	// 	'frame_button' => __( 'Choose logo' ),
+	// 	// ),
+	// ) ) );
+
 	// Google maps key
 	$wp_customize->add_section( 'nickel_google_maps_key', array(
 		'priority'       => 20,
@@ -52,14 +78,6 @@ function nickel_customize_register( $wp_customize ) {
 		)
 	);
 
-	// $wp_customize->add_section( 'nickel_'.$font_key.'_fonts', array(
-	// 	'priority'       => 20,
-	// 	'capability'     => 'edit_theme_options',
-	// 	'title'          => $font_value['title'],
-	// 	'description'    => $font_value['description'],
-	// 	'panel'          => 'nickel_font_panel'
-	// ) );
-
 	$wp_customize->add_setting( 'nickel_header_presentation', array( 'default' => 'text', 'sanitize_callback' => 'sanitize_text_field' ) );
 	$wp_customize->add_control(
 		'nickel_header_presentation',
@@ -67,9 +85,19 @@ function nickel_customize_register( $wp_customize ) {
 			'label'      => __('Header display ', 'nickel'),
 			'section'    => 'title_tagline',
 			'type'       => 'select',
+			'priority'	 => 20,
 			'choices'    => array(
 				'text' => __('Only text', 'nickel'),
 				'logo' => __('Only logo', 'nickel')
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'nickel_header_logo', array( 'sanitize_callback' => 'esc_url' ) );
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize, 'nickel_header_logo', array(
+			'label'      => __( 'Header logo', 'nickel' ),
+			'section'    => 'title_tagline',
 			)
 		)
 	);

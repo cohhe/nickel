@@ -62,8 +62,7 @@ if ( ( MAGAZINE_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || 
 	$nickel_site_width = 'col-sm-9 col-md-9 col-lg-9';
 }
 
-$logo = get_custom_header();
-$logo = $logo->url;
+$logo = get_theme_mod('nickel_header_logo', '');
 
 if (get_search_query() == '') {
 	$search_string = esc_html__('Search', 'nickel');
@@ -85,7 +84,7 @@ if ( $title_color ) {
 		<div class="header-wrapper">
 			<div class="logo-wrapper">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
-					<?php if ( $header_display == 'logo' && $logo ) { ?>
+					<?php if ( $header_display == 'logo' && $logo != '' ) { ?>
 						<img src="<?php echo esc_url($logo); ?>" alt="<?php esc_html_e('Site logo', 'nickel'); ?>">
 					<?php } else { ?>
 						<span class="blog-name" <?php echo $title_color_style; ?>><?php bloginfo( 'name' ); ?></span>
