@@ -1,5 +1,8 @@
 Nickel changelog
 
+= Version 1.3.3 =
+* Allow to choose between logo or title
+
 = Version 1.3.2 =
 * Fixed post format meta issue
 * Made link post format clickable
