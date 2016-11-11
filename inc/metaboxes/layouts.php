@@ -3,7 +3,7 @@
  * Layout options
  */
 
-$config = array(
+$nickel_config = array(
 	'id'       => 'vh_layouts',
 	'title'    => __('Layouts', 'nickel'),
 	'pages'    => array('page', 'post'),
@@ -11,7 +11,7 @@ $config = array(
 	'priority' => 'high',
 );
 
-$options = array(array(
+$nickel_options = array(array(
 	'name'    => __('Layout type', 'nickel'),
 	'id'      => 'layouts',
 	'type'    => 'layouts',
@@ -20,4 +20,4 @@ $options = array(array(
 ));
 
 require_once(get_template_directory() . '/inc/metaboxes/add_metaboxes.php');
-new create_meta_boxes($config, $options);
+new nickel_create_meta_boxes($nickel_config, $nickel_options);

@@ -59,25 +59,6 @@ function nickel_customize_register( $wp_customize ) {
 	// 	// ),
 	// ) ) );
 
-	// Google maps key
-	$wp_customize->add_section( 'nickel_google_maps_key', array(
-		'priority'       => 20,
-		'capability'     => 'edit_theme_options',
-		'title'          => __( 'Google maps key' , 'nickel'),
-		'description'    => __( 'Google maps API key so theme can use Google maps API.' , 'nickel'),
-	) );
-
-	$wp_customize->add_setting( 'nickel_gmap_key', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-
-	$wp_customize->add_control(
-		'nickel_gmap_key',
-		array(
-			'label'      => 'Google maps key',
-			'section'    => 'nickel_google_maps_key',
-			'type'       => 'text',
-		)
-	);
-
 	$wp_customize->add_setting( 'nickel_header_presentation', array( 'default' => 'text', 'sanitize_callback' => 'sanitize_text_field' ) );
 	$wp_customize->add_control(
 		'nickel_header_presentation',

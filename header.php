@@ -48,17 +48,17 @@ $header_display = get_theme_mod('nickel_header_presentation', 'text');
 
 switch ($layout_type) {
 	case 'right':
-		define('MAGAZINE_LAYOUT', 'sidebar-right');
+		define('NICKEL_LAYOUT', 'sidebar-right');
 		break;
 	case 'full':
-		define('MAGAZINE_LAYOUT', 'sidebar-no');
+		define('NICKEL_LAYOUT', 'sidebar-no');
 		break;
 	case 'left':
-		define('MAGAZINE_LAYOUT', 'sidebar-left');
+		define('NICKEL_LAYOUT', 'sidebar-left');
 		break;
 }
 
-if ( ( MAGAZINE_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || ( MAGAZINE_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-6' ) ) ) {
+if ( ( NICKEL_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-5' ) ) || ( NICKEL_LAYOUT != 'sidebar-no' && is_active_sidebar( 'sidebar-6' ) ) ) {
 	$nickel_site_width = 'col-sm-9 col-md-9 col-lg-9';
 }
 

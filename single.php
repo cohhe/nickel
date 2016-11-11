@@ -14,7 +14,7 @@ global $nickel_site_width;
 
 <div id="main-content" class="main-content row">
 	<?php
-		if ( MAGAZINE_LAYOUT == 'sidebar-left' ) {
+		if ( NICKEL_LAYOUT == 'sidebar-left' ) {
 			get_sidebar( 'post' );
 		}
 	?>
@@ -40,7 +40,7 @@ global $nickel_site_width;
 		?>
 	</div><!-- .content-wrapper -->
 	<?php
-		if ( MAGAZINE_LAYOUT == 'sidebar-right' ) {
+		if ( NICKEL_LAYOUT == 'sidebar-right' ) {
 			get_sidebar( 'post' );
 		}
 	?>

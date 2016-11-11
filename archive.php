@@ -46,7 +46,7 @@ global $nickel_site_width;
 				endif;
 			?>
 	</div><!-- .content-wrapper -->
-	<?php nickel_paging_nav(); ?>
+	<?php the_posts_pagination(); ?>
 </div><!-- #main-content -->
 
 <?php

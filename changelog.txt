@@ -1,5 +1,15 @@
 Nickel changelog
 
+= Version 1.3.4 =
+* Fixed pagination
+* Removed Google maps key from customizer
+* Prefixed classes/variables
+* Escaped and sanitized some values
+* Include js/css only on the post.php admin page
+* Prefixed enqueues
+* Switched query_posts to get_posts at the menu
+* Moved allowed post tags to plugin
+
 = Version 1.3.3 =
 * Allow to choose between logo or title
 

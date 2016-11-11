@@ -122,12 +122,6 @@ if ( ! function_exists( 'nickel_setup' ) ) :
 endif; // nickel_setup
 add_action( 'after_setup_theme', 'nickel_setup' );
 
-// Admin CSS
-function nickel_admin_css() {
-	wp_enqueue_style( 'nickel-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
-}
-add_action('admin_head','nickel_admin_css');
-
 function nickel_getTextBetweenTags($string, $tagname) {
     $pattern = "/<$tagname>([\w\W]*?)<\/$tagname>/";
     preg_match($pattern, $string, $matches);
@@ -304,69 +298,6 @@ function nickel_widgets_init() {
 add_action('widgets_init', 'nickel_widgets_init');
 
 /**
- * Custom template tags for nickel 1.0
- *
- * @package WordPress
- * @subpackage nickel
- * @since nickel 1.0
- */
-
-if ( ! function_exists( 'nickel_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @since nickel 1.0
- *
- * @return void
- */
-function nickel_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-
-	$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-	$pagenum_link = html_entity_decode( get_pagenum_link() );
-	$query_args   = array();
-	$url_parts    = explode( '?', $pagenum_link );
-
-	if ( isset( $url_parts[1] ) ) {
-		wp_parse_str( $url_parts[1], $query_args );
-	}
-
-	$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-	$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-	$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-	$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-	// Set up paginated links.
-	$links = paginate_links( array(
-		'base'     => $pagenum_link,
-		'format'   => $format,
-		'total'    => $GLOBALS['wp_query']->max_num_pages,
-		'current'  => $paged,
-		'mid_size' => 1,
-		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => '',
-		'next_text' => '',
-	) );
-
-	if ( $links ) :
-
-	?>
-	<div class="clearfix"></div>
-	<nav class="navigation paging-navigation" role="navigation">
-		<div class="pagination loop-pagination">
-			<?php echo $links; ?>
-		</div><!-- .pagination -->
-	</nav><!-- .navigation -->
-	<?php
-	endif;
-}
-endif;
-
-/**
  * Adjust content_width value for image attachment template.
  *
  * @since Nickel 1.0
@@ -424,8 +355,7 @@ function nickel_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Add Google fonts
-	wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,500,600,700|Roboto:100,300,400,500,600,700|Open+Sans:100,300,400,500,600,700|Oswald:100,300,400,500,600,700|Satisfy:100,300,400,500,600,700&subset=latin');
-	wp_enqueue_style( 'googleFonts');
+	wp_enqueue_style('nickel-googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,500,600,700|Roboto:100,300,400,500,600,700|Open+Sans:100,300,400,500,600,700|Oswald:100,300,400,500,600,700|Satisfy:100,300,400,500,600,700&subset=latin');
 
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );
@@ -460,9 +390,11 @@ add_action( 'wp_enqueue_scripts', 'nickel_scripts' );
 
 // Admin Javascript
 add_action( 'admin_enqueue_scripts', 'nickel_admin_scripts' );
-function nickel_admin_scripts() {
-	wp_register_script('master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
-	wp_enqueue_script('master');
+function nickel_admin_scripts( $hook ) {
+	if ( $hook == 'post.php' ) {
+		wp_enqueue_script('nickel-master', get_template_directory_uri() . '/inc/js/admin-master.js', array('jquery'));
+		wp_enqueue_style( 'nickel-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
+	}
 }
 
 if ( ! function_exists( 'nickel_the_attached_image' ) ) :
@@ -548,7 +480,7 @@ function nickel_prev_next_links() {
 					$output .= '<img src="'.$img['0'].'" class="prev-post-img" alt="Post with image">';
 				}
 				$output .= '<div class="prev-post-link">
-					<a href="'. get_permalink( $prev_post->ID ).'" class="prev-blog-post">'.get_the_title( $prev_post->ID ).'</a>
+					<a href="'. esc_url(get_permalink( $prev_post->ID )).'" class="prev-blog-post">'.get_the_title( $prev_post->ID ).'</a>
 					<div class="prev-post-meta">' . nickel_category_list( $prev_post->ID, true ) . '<span class="prev-date icon-clock">' . human_time_diff(get_the_time('U',$prev_post->ID),current_time('timestamp')) .  ' '.__('ago', 'nickel') . '</span></div>
 				</div>
 			</div>';
@@ -563,7 +495,7 @@ function nickel_prev_next_links() {
 					$output .= '<img src="'.$img['0'].'" class="next-post-img" alt="Post with image">';
 				}
 				$output .= '<div class="next-post-link">
-					<a href="'. get_permalink( $next_post->ID ).'" class="next-blog-post">'. get_the_title( $next_post->ID ).'</a>
+					<a href="'. esc_url(get_permalink( $next_post->ID )).'" class="next-blog-post">'. get_the_title( $next_post->ID ).'</a>
 					<div class="next-post-meta">' . nickel_category_list( $next_post->ID, true ) . '<span class="next-date icon-clock">' . human_time_diff(get_the_time('U',$next_post->ID),current_time('timestamp')) .  ' '.__('ago', 'nickel') . '</span></div>
 				</div>
 			</div>';
@@ -598,7 +530,7 @@ function nickel_body_classes( $classes ) {
 		$classes[] = 'nickel-slider-active';
 	}
 
-	$classes[] = MAGAZINE_LAYOUT;
+	$classes[] = NICKEL_LAYOUT;
 
 	return $classes;
 }
@@ -734,38 +666,33 @@ class Nickel_Header_Menu_Walker extends Walker_Nav_Menu {
 }
 
 function nickel_get_menu_category( $category_id ) {
-	query_posts(array(
+	$menu_posts = get_posts(array(
 		'post_type' => 'post',
 		'posts_per_page' => '4',
-		'cat' => $category_id
+		'category' => $category_id
 
 	));
-
-	if ( !have_posts() ) {
-		wp_reset_query();
+	if ( empty($menu_posts) ) {
 		wp_reset_postdata();
 		return;
 	}
 
 	$output = '<div class="menu-category-container">';
 
-	while(have_posts()) {
-		the_post();
-
-		$img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'nickel-small-thumb');
+	foreach ($menu_posts as $post_data) {
+		$img = wp_get_attachment_image_src(get_post_thumbnail_id( $post_data->ID ), 'nickel-small-thumb');
 
 		$output .= '<div class="menu-category-item">';
 			if ( !empty($img['0']) ) {
-				$output .= '<a href="'.get_the_permalink( get_the_ID() ).'" class="category-img-link"><img src="' . $img['0'] . '" class="menu-post-img"></a>';
+				$output .= '<a href="'.esc_url(get_the_permalink( $post_data->ID )).'" class="category-img-link"><img src="' . $img['0'] . '" class="menu-post-img"></a>';
 			}
-			$output .= '<span class="menu-post-date">' . get_the_date( get_option( 'date_format' ), get_the_ID() ) . '</span>';
-			$output .= '<a href="#" class="menu-post-title">' . get_the_title() . '</a>';
+			$output .= '<span class="menu-post-date">' . get_the_date( get_option( 'date_format' ), $post_data->ID ) . '</span>';
+			$output .= '<a href="'.esc_url(get_the_permalink( $post_data->ID )).'" class="menu-post-title">' . get_the_title( $post_data->ID ) . '</a>';
 		$output .= '</div>';
 	}
 
 	$output .= '</div>';
 
-	wp_reset_query();
 	wp_reset_postdata();
 
 	return $output;
@@ -865,12 +792,3 @@ function nickel_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'nickel_register_required_plugins' );
-
-function nickel_allowed_tags() {
-	global $allowedposttags;
-	$allowedposttags['script'] = array(
-		'type' => true,
-		'src' => true
-	);
-}
-add_action( 'init', 'nickel_allowed_tags' );
