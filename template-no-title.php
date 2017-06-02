@@ -15,18 +15,17 @@ global $nickel_site_width, $nickel_layout_type;
 		}
 	?>
 	<div class="content-wrapper <?php echo esc_attr($nickel_site_width); ?>">
+		<?php
+			// Start the Loop.
+			while ( have_posts() ) : the_post();
 
-			<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
+				// Include the page content template.
+				get_template_part( 'content', 'page' );
 
-					// Include the page content template.
-					get_template_part( 'content', 'page' );
-
-				endwhile;
-				
-			?>
-
+			endwhile;
+			
+		?>
+		<div class="clearfix"></div>
 	</div><!-- .content-wrapper -->
 	<?php
 		if ( NICKEL_LAYOUT == 'sidebar-right' ) {

@@ -32,6 +32,7 @@ global $nickel_site_width;
 
 			endif;
 		?>
+		<div class="clearfix"></div>
 	</div><!-- .content-wrapper -->
 </div><!-- #main-content -->
 
